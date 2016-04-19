@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "production": "webpack -p",
+    "start": "webpack-dev-server"
   },
   "author": "",
   "license": "ISC",
@@ -16,7 +17,9 @@
     "babel-core": "^6.7.6",
     "babel-loader": "^6.2.4",
     "babel-preset-react": "^6.5.0",
+    "css-loader": "^0.23.1",
     "html-webpack-plugin": "^2.16.0",
+    "style-loader": "^0.13.1",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
   }
