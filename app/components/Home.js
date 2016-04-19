@@ -8,7 +8,9 @@ var Home = React.createClass({
     return (
       <div className={"jumbotron col-sm-12 text-center"} style={styles.transparentBg}>
         <h1>React Omdb</h1>
-        <SearchContainer />
+        <div className='col-sm-12' style={styles.space}>
+          <SearchContainer />
+        </div>
       </div>
     )
   }
