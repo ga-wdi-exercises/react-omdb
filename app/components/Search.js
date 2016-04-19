@@ -1,4 +1,5 @@
 var React = require("react");
+var PropTypes = React.PropTypes;
 var styles = require("../styles/index");
 
 var Search = React.createClass({
@@ -28,5 +29,11 @@ var Search = React.createClass({
     )
   }
 });
+
+Search.propTypes = {
+  onSubmitSearch: PropTypes.func.isRequired,
+  onUpdateSearch: PropTypes.func.isRequired,
+  query: PropTypes.string.isRequired
+}
 
 module.exports = Search;
