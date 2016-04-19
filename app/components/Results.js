@@ -3,18 +3,18 @@ var styles = require('../styles/index');
 
 var Results = React.createClass({
   render: function () {
-    console.log(this.props.results);
+    console.log(this.props.movies);
     return (
-      <ul style={styles.noListStyle}>
-        {this.props.results.map(function(result, index) {
+      <div style={styles.movies}>
+        {this.props.movies.map(function(movie, index) {
           return (
-            <li key={index}>
-              <img src={result.Poster} />
-              <p>{result.Title}</p>
-            </li>
+            <div style={styles.movie} key={index}>
+              <img className="img-thumbnail" src={movie.posterUrl} style={styles.posterThumb} />
+              <p style={styles.textOverflow}>{movie.Title}</p>
+            </div>
           )
         })}
-      </ul>
+      </div>
     )
   }
 });

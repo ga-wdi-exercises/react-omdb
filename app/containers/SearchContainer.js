@@ -32,7 +32,7 @@ var SearchContainer = React.createClass({
   render: function () {
     if (this.state.searched) {
       return (
-        <Results results={this.state.results} />
+        <Results movies={this.state.results} />
       )
     }
     return (

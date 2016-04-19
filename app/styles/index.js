@@ -5,8 +5,18 @@ var styles = {
   space: {
     marginTop: '25px'
   },
-  noListStyle: {
-    listStyleType: 'none'
+  posterThumb: {
+    height: "200px"
+  },
+  movies: {
+    display: "flex",
+    flexWrap: "wrap",
+  },
+  movie: {
+    width: "240px"
+  },
+  textOverflow: {
+    whiteSpace: "wrap",
   }
 };
 
