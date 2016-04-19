@@ -1,16 +1,14 @@
 var React = require("react");
 var Search = require("../components/Search");
 var Results = require("../components/Results");
+var queryOmdb = require("../utils/omdbHelpers.js").queryOmdb
 
 var SearchContainer = React.createClass({
-  results: [
-    { title: "Star Wars", img_url: "http://fallmeeting.agu.org/2015/files/2015/12/Star-Wars.jpg" },
-    { title: "Top Gun", img_url: "http://ecx.images-amazon.com/images/I/51YimkRDEjL._SY445_.jpg" }
-  ],
   getInitialState: function () {
     return {
       query: "",
-      searched: false
+      searched: false,
+      results: []
     }
   },
   handleUpdateSearch: function (e) {
@@ -19,18 +17,22 @@ var SearchContainer = React.createClass({
     })
   },
   handleSubmitSearch: function (e) {
+    var self = this;
     e.preventDefault();
-
-    console.log(this.state.query);
-    this.setState({
-      query: "",
-      searched: true
+    // Use the user input to fetch results from OMDB
+    queryOmdb(this.state.query)
+    .then(function(data){
+      self.setState({
+        results: data,
+        searched: true,
+        query: ""
+      })
     })
   },
   render: function () {
     if (this.state.searched) {
       return (
-        <Results results={this.results} />
+        <Results results={this.state.results} />
       )
     }
     return (
