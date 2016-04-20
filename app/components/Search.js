@@ -1,4 +1,5 @@
 var React = require("react");
+var PropTypes = React.PropTypes;
 
 var Search = React.createClass({
   render: function () {
@@ -16,5 +17,11 @@ var Search = React.createClass({
     )
   }
 });
+
+Search.propTypes = {
+  onUpdateSearch: PropTypes.func.isRequired,
+  onSubmitSearch: PropTypes.func.isRequired,
+  query: PropTypes.string.isRequired
+}
 
 module.exports = Search;
