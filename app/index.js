@@ -2,11 +2,11 @@
 var React = require('react');
 var ReactDOM = require("react-dom");
 
-// Load HelloWorld Component
-var HelloWorld = require("./components/HelloWorld");
+// Load Home Component
+var Home = require("./components/Home");
 
-// Render HelloWorld
+// Render Home
 ReactDOM.render(
-  <HelloWorld />, // our component
+  <Home />, // our component
   document.getElementById("app") // where to render
 )
