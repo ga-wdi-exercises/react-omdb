@@ -1,12 +1,12 @@
 var React = require('react');
-var Search = require("./Search"); // load in Search component
+var SearchContainer = require("../containers/SearchContainer");
 
 var Home = React.createClass({
   render: function () {
     return (
       <div className="container">
         <h1>React OMDB</h1>
-        <Search />
+        <SearchContainer />
       </div>
     )
   }
