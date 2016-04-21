@@ -7,8 +7,8 @@ var Results = React.createClass({
         {this.props.movies.map(function(movie, index) {
           return (
             <div key={index}>
-              <img src={movie.poster_url} />
-              <p>{movie.title}</p>
+              <img src={movie.Poster} />
+              <p>{movie.Title}</p>
             </div>
           )
         })}
