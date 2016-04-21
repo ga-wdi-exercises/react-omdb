@@ -5,7 +5,7 @@ var Home = React.createClass({
   render: function () {
     return (
       <div className="container">
-        <h1>React OMDB</h1>
+        <h1><a href="/">React OMDB</a></h1>
         <SearchContainer />
       </div>
     )
