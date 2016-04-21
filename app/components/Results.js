@@ -1,14 +1,18 @@
 var React = require("react");
+var styles = require('../styles/index');
 
 var Results = React.createClass({
   render: function () {
     return (
-      <div>
+      <div style={styles.movies}>
         {this.props.movies.map(function(movie, index) {
           return (
-            <div key={index}>
-              <img src={movie.Poster} />
-              <p>{movie.Title}</p>
+            <div style={styles.movie} key={index}>
+              <img
+                className="img-thumbnail"
+                src={movie.Poster}
+                style={styles.posterThumb} />
+              <p style={styles.textOverflow}>{movie.Title}</p>
             </div>
           )
         })}

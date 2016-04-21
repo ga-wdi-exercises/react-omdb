@@ -22,6 +22,10 @@ module.exports = {
         test: /\.js$/, // target any file ending in js
         exclude: /node_modules/, // except for node_modules
         loader: 'babel-loader' // apply the babel loader
+      },
+      {
+        test: /\.css$/, // target any file ending in css
+        loader: 'css-loader!style-loader' // apply the style and css loaders
       }
     ]
   },
