@@ -4,10 +4,13 @@
 
 ### Step 0: Examine the Solution
 
+Fork and clone the app locally.
+
 Check out to the solution branch and spend time playing around with the completed exercise. Think about how you would separate your different components and functionality.
 
 ```
 git checkout solution
+npm install
 npm start
 ```
 
