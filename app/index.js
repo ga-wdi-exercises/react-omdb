@@ -1,12 +1,12 @@
 // Bring in React and ReactDom
-var React = require('react');
-var ReactDOM = require("react-dom");
-var PropTypes = React.PropTypes;
-var styles = require("./styles/index");
+const React = require('react');
+const ReactDOM = require("react-dom");
+const PropTypes = React.PropTypes;
+const styles = require("./styles/index");
 
 function queryOmdb (query) {
-  var term = query.replace(/\s/, "+"); // replace any white space characters with a "+"
-  var url = "http://omdbapi.com/?s=" + term;
+  let term = query.replace(/\s/, "+"); // replace any white space characters with a "+"
+  let url = "http://omdbapi.com/?s=" + term;
 
   // fetch all movies matching the passed in title as JSON
   return $.getJSON(url).then(function(response) {
@@ -14,7 +14,7 @@ function queryOmdb (query) {
   });
 }
 
-var SearchContainer = React.createClass({
+const SearchContainer = React.createClass({
   // define our Search component's state when its rendered
   getInitialState: function () {
     return {
@@ -31,7 +31,7 @@ var SearchContainer = React.createClass({
   },
   // when the user clicks search
   handleSubmitSearch: function (e) {
-    var component = this; // cache reference to component's context
+    const component = this; // cache reference to component's context
     e.preventDefault(); // prevent default page refresh
     console.log(this.state.query); // log the current value of the user's search
     // make ajax call
@@ -61,7 +61,7 @@ var SearchContainer = React.createClass({
   }
 });
 
-var Search = React.createClass({
+const Search = React.createClass({
   render: function () {
     return (
       <div className="jumbotron col-sm-6 col-sm-offset-3 text-center" style={styles.transparentBg}>
@@ -95,7 +95,7 @@ Search.propTypes = {
   query: PropTypes.string.isRequired
 }
 
-var Results = React.createClass({
+const Results = React.createClass({
   render: function () {
     return (
       <div style={styles.movies}>
@@ -115,7 +115,7 @@ var Results = React.createClass({
   }
 });
 
-var Home = React.createClass({
+const Home = React.createClass({
   render: function () {
     return (
       <div className="jumbotron col-sm-12 text-center" style={styles.transparentBg}>
