@@ -1,8 +1,8 @@
 // Bring in React and ReactDom
-const React = require('react');
-const ReactDOM = require("react-dom");
-const PropTypes = React.PropTypes;
-const styles = require("./styles/index");
+import React, { PropTypes } from 'react'
+import ReactDOM from "react-dom"
+import styles from "./styles/index"
+
 
 const queryOmdb = (query) => {
   let term = query.replace(/\s/, "+"); // replace any white space characters with a "+"
