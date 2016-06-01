@@ -14,37 +14,37 @@ const queryOmdb = (query) => {
   );
 }
 
-const SearchContainer = React.createClass({
+class SearchContainer extends React.Component{
   // define our Search component's state when its rendered
-  getInitialState() {
-    return {
+  constructor() {
+    super();
+    this.state = {
       query: "", // search query starts empty
       searched: false, // a user has not submitted a search by defualt
       results: [] // initialize an empty array for results
     }
-  },
+  }
   // when ever search input is entered, change the state
   handleUpdateSearch(e) {
     this.setState({
       query: e.target.value // grab whatever's in the search input
     });
-  },
+  }
   // when the user clicks search
   handleSubmitSearch(e) {
-    const component = this; // cache reference to component's context
     e.preventDefault(); // prevent default page refresh
     console.log(this.state.query); // log the current value of the user's search
     // make ajax call
     queryOmdb(this.state.query).then((movies) => {
       console.log(movies);
       // redefine our app's state to include populated response
-      component.setState({
+      this.setState({
         results: movies,
         query: "",
         searched: true // flip the switch
       })
     })
-  },
+  }
   render() {
     if (this.state.searched) {
       return (
@@ -53,15 +53,15 @@ const SearchContainer = React.createClass({
     }
     return (
       <Search
-        onUpdateSearch={this.handleUpdateSearch}
-        onSubmitSearch={this.handleSubmitSearch}
+        onUpdateSearch={(event) => this.handleUpdateSearch(event)}
+        onSubmitSearch={(event) => this.handleSubmitSearch(event)}
         query={this.state.query}
        />
     )
   }
-});
+};
 
-const Search = React.createClass({
+class Search extends React.Component{
   render() {
     return (
       <div className="jumbotron col-sm-6 col-sm-offset-3 text-center" style={styles.transparentBg}>
@@ -87,7 +87,7 @@ const Search = React.createClass({
       </div>
     )
   }
-});
+};
 
 Search.propTypes = {
   onUpdateSearch: PropTypes.func.isRequired,
@@ -95,7 +95,7 @@ Search.propTypes = {
   query: PropTypes.string.isRequired
 }
 
-const Results = React.createClass({
+class Results extends React.Component{
   render() {
     return (
       <div style={styles.movies}>
@@ -112,9 +112,9 @@ const Results = React.createClass({
       </div>
     )
   }
-});
+};
 
-const Home = React.createClass({
+class Home extends React.Component{
   render() {
     return (
       <div className="jumbotron col-sm-12 text-center" style={styles.transparentBg}>
@@ -125,7 +125,7 @@ const Home = React.createClass({
       </div>
     )
   }
-});
+};
 
 // Render Home
 ReactDOM.render(
