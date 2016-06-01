@@ -16,7 +16,7 @@ function queryOmdb (query) {
 
 const SearchContainer = React.createClass({
   // define our Search component's state when its rendered
-  getInitialState: function () {
+  getInitialState() {
     return {
       query: "", // search query starts empty
       searched: false, // a user has not submitted a search by defualt
@@ -24,13 +24,13 @@ const SearchContainer = React.createClass({
     }
   },
   // when ever search input is entered, change the state
-  handleUpdateSearch: function (e) {
+  handleUpdateSearch(e) {
     this.setState({
       query: e.target.value // grab whatever's in the search input
     });
   },
   // when the user clicks search
-  handleSubmitSearch: function (e) {
+  handleSubmitSearch(e) {
     const component = this; // cache reference to component's context
     e.preventDefault(); // prevent default page refresh
     console.log(this.state.query); // log the current value of the user's search
@@ -45,7 +45,7 @@ const SearchContainer = React.createClass({
       })
     })
   },
-  render: function () {
+  render() {
     if (this.state.searched) {
       return (
         <Results movies={this.state.results} />
@@ -62,7 +62,7 @@ const SearchContainer = React.createClass({
 });
 
 const Search = React.createClass({
-  render: function () {
+  render() {
     return (
       <div className="jumbotron col-sm-6 col-sm-offset-3 text-center" style={styles.transparentBg}>
         <div className="col-sm-12">
@@ -96,7 +96,7 @@ Search.propTypes = {
 }
 
 const Results = React.createClass({
-  render: function () {
+  render() {
     return (
       <div style={styles.movies}>
         {this.props.movies.map(function(movie, index) {
@@ -116,7 +116,7 @@ const Results = React.createClass({
 });
 
 const Home = React.createClass({
-  render: function () {
+  render() {
     return (
       <div className="jumbotron col-sm-12 text-center" style={styles.transparentBg}>
         <h1><a href="/">React OMDB</a></h1>
