@@ -4,14 +4,14 @@ const ReactDOM = require("react-dom");
 const PropTypes = React.PropTypes;
 const styles = require("./styles/index");
 
-function queryOmdb (query) {
+const queryOmdb = (query) => {
   let term = query.replace(/\s/, "+"); // replace any white space characters with a "+"
   let url = "http://omdbapi.com/?s=" + term;
 
   // fetch all movies matching the passed in title as JSON
-  return $.getJSON(url).then(function(response) {
-    return response["Search"]
-  });
+  return $.getJSON(url).then((response) =>
+    response["Search"]
+  );
 }
 
 const SearchContainer = React.createClass({
@@ -35,7 +35,7 @@ const SearchContainer = React.createClass({
     e.preventDefault(); // prevent default page refresh
     console.log(this.state.query); // log the current value of the user's search
     // make ajax call
-    queryOmdb(this.state.query).then(function(movies) {
+    queryOmdb(this.state.query).then((movies) => {
       console.log(movies);
       // redefine our app's state to include populated response
       component.setState({
@@ -99,8 +99,7 @@ const Results = React.createClass({
   render() {
     return (
       <div style={styles.movies}>
-        {this.props.movies.map(function(movie, index) {
-          return (
+        {this.props.movies.map((movie, index) => (
             <div style={styles.movie} key={index}>
               <img
                 className="img-thumbnail"
@@ -109,7 +108,7 @@ const Results = React.createClass({
               <p style={styles.textOverflow}>{movie.Title}</p>
             </div>
           )
-        })}
+        )}
       </div>
     )
   }
