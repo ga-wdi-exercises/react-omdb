@@ -1,51 +1,51 @@
 // Bring in React and ReactDom
-var React = require('react');
-var ReactDOM = require("react-dom");
-var PropTypes = React.PropTypes;
-var styles = require("./styles/index");
+import React, { PropTypes } from 'react'
+import ReactDOM from "react-dom"
+import styles from "./styles/index"
 
-function queryOmdb (query) {
-  var term = query.replace(/\s/, "+"); // replace any white space characters with a "+"
-  var url = "http://omdbapi.com/?s=" + term;
+
+const queryOmdb = (query) => {
+  let term = query.replace(/\s/, "+"); // replace any white space characters with a "+"
+  let url = "http://omdbapi.com/?s=" + term;
 
   // fetch all movies matching the passed in title as JSON
-  return $.getJSON(url).then(function(response) {
-    return response["Search"]
-  });
+  return $.getJSON(url).then((response) =>
+    response["Search"]
+  );
 }
 
-var SearchContainer = React.createClass({
+class SearchContainer extends React.Component{
   // define our Search component's state when its rendered
-  getInitialState: function () {
-    return {
+  constructor() {
+    super();
+    this.state = {
       query: "", // search query starts empty
       searched: false, // a user has not submitted a search by defualt
       results: [] // initialize an empty array for results
     }
-  },
+  }
   // when ever search input is entered, change the state
-  handleUpdateSearch: function (e) {
+  handleUpdateSearch(e) {
     this.setState({
       query: e.target.value // grab whatever's in the search input
     });
-  },
+  }
   // when the user clicks search
-  handleSubmitSearch: function (e) {
-    var component = this; // cache reference to component's context
+  handleSubmitSearch(e) {
     e.preventDefault(); // prevent default page refresh
     console.log(this.state.query); // log the current value of the user's search
     // make ajax call
-    queryOmdb(this.state.query).then(function(movies) {
+    queryOmdb(this.state.query).then((movies) => {
       console.log(movies);
       // redefine our app's state to include populated response
-      component.setState({
+      this.setState({
         results: movies,
         query: "",
         searched: true // flip the switch
       })
     })
-  },
-  render: function () {
+  }
+  render() {
     if (this.state.searched) {
       return (
         <Results movies={this.state.results} />
@@ -53,16 +53,16 @@ var SearchContainer = React.createClass({
     }
     return (
       <Search
-        onUpdateSearch={this.handleUpdateSearch}
-        onSubmitSearch={this.handleSubmitSearch}
+        onUpdateSearch={(event) => this.handleUpdateSearch(event)}
+        onSubmitSearch={(event) => this.handleSubmitSearch(event)}
         query={this.state.query}
        />
     )
   }
-});
+};
 
-var Search = React.createClass({
-  render: function () {
+class Search extends React.Component{
+  render() {
     return (
       <div className="jumbotron col-sm-6 col-sm-offset-3 text-center" style={styles.transparentBg}>
         <div className="col-sm-12">
@@ -87,7 +87,7 @@ var Search = React.createClass({
       </div>
     )
   }
-});
+};
 
 Search.propTypes = {
   onUpdateSearch: PropTypes.func.isRequired,
@@ -95,12 +95,11 @@ Search.propTypes = {
   query: PropTypes.string.isRequired
 }
 
-var Results = React.createClass({
-  render: function () {
+class Results extends React.Component{
+  render() {
     return (
       <div style={styles.movies}>
-        {this.props.movies.map(function(movie, index) {
-          return (
+        {this.props.movies.map((movie, index) => (
             <div style={styles.movie} key={index}>
               <img
                 className="img-thumbnail"
@@ -109,14 +108,14 @@ var Results = React.createClass({
               <p style={styles.textOverflow}>{movie.Title}</p>
             </div>
           )
-        })}
+        )}
       </div>
     )
   }
-});
+};
 
-var Home = React.createClass({
-  render: function () {
+class Home extends React.Component{
+  render() {
     return (
       <div className="jumbotron col-sm-12 text-center" style={styles.transparentBg}>
         <h1><a href="/">React OMDB</a></h1>
@@ -126,7 +125,7 @@ var Home = React.createClass({
       </div>
     )
   }
-});
+};
 
 // Render Home
 ReactDOM.render(
