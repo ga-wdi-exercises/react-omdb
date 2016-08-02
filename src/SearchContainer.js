@@ -38,7 +38,7 @@ class SearchContainer extends Component {
       )
     } else {
       return  (
-          <Search
+        <Search
           handleSearchInput={ (evt) => this.onSearchInput(evt) }
           handleSubmitQuery={ (evt) => this.onSubmitQuery(evt) }
           query={this.state.query} />
