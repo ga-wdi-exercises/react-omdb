@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class HelloWorld extends Component {
+class Home extends Component {
   render() {
     return (
-      <div>Hello world.</div>
+      <div>
+        <h1>OMDB React</h1>
+        <div>Here's a container div.</div>
+      </div>
     );
   }
 }
 
-export default HelloWorld;
+export default Home;
