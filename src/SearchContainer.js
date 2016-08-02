@@ -1,6 +1,7 @@
 import React, {Component} from "react"
 import Search from "./Search"
 import Results from "./Results"
+import {queryOmdb} from "./Utils"
 
 class SearchContainer extends Component {
   constructor(props){
@@ -8,6 +9,7 @@ class SearchContainer extends Component {
     this.state = {
       query: '',
       hasSearched: false,
+      movies: [],
     }
   }
 
@@ -18,21 +20,21 @@ class SearchContainer extends Component {
   }
 
   onSubmitQuery(evt){
-    evt.preventDefault();
-    this.setState({
-      query: '',
-      hasSearched: true,
+    evt.preventDefault()
+    let component = this
+    queryOmdb(this.state.query).then( data => {
+      component.setState({
+        query: '',
+        hasSearched: true,
+        movies: data,
+      })
     })
   }
 
   render(){
-    let movies = [
-      {title: "Star Wars", poster_url: "http://fallmeeting.agu.org/2015/files/2015/12/Star-Wars.jpg"},
-      {title: "Top Gun", poster_url: "http://ecx.images-amazon.com/images/I/51YimkRDEjL._SY445_.jpg"}
-    ]
     if (this.state.hasSearched){
       return (
-        <Results movies={movies} />
+        <Results movies={this.state.movies} />
       )
     } else {
       return  (
