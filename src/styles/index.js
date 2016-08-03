@@ -5,6 +5,9 @@ const styles = {
   space: {
     marginTop: '25px'
   },
+  spaceB: {
+    marginBottom: '25px'
+  },
   posterThumb: {
     height: "200px"
   },

@@ -2,6 +2,7 @@ import React, {Component} from "react"
 import Search from "./Search"
 import Results from "./Results"
 import {queryOmdb} from "./Utils"
+import styles from './styles/index'
 
 class SearchContainer extends Component {
   constructor(props){
@@ -19,13 +20,18 @@ class SearchContainer extends Component {
     })
   }
 
+  handleToggleSearch (evt) {
+    let hasSearched = !this.state.hasSearched
+    this.setState(Object.assign(this.state, {hasSearched, }))
+  }
+
   onSubmitQuery(evt){
     evt.preventDefault()
     let component = this
     queryOmdb(this.state.query).then( data => {
       component.setState({
         query: '',
-        hasSearched: true,
+        hasSearched: !component.state.hasSearched,
         movies: data,
       })
     })
@@ -34,7 +40,15 @@ class SearchContainer extends Component {
   render(){
     if (this.state.hasSearched){
       return (
-        <Results movies={this.state.movies} />
+        <div>
+          <button
+            onClick={ evt => this.handleToggleSearch(evt) }
+            style={styles.spaceB}
+            className="btn btn-default">
+              Search Again
+          </button>
+          <Results movies={this.state.movies} />
+        </div>
       )
     } else {
       return  (
