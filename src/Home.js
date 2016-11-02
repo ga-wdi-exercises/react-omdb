@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Search from './Search.js';
+import axios from 'axios';
 import Movielist from './Movielist.js';
 
 class Home extends Component {
@@ -8,30 +9,29 @@ class Home extends Component {
     super();
     this.state = {
       query: "",
-      currentMovies: [
-        {
-          title: "Batman: Gotham Knight",
-          year: "2008",
-          imgurl: "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ1NjExODcyNl5BMl5BanBnXkFtZTcwMTk0MDc4MQ@@._V1_SX300.jpg",
-        },
-        {
-          title: "Batman: Gotham Knight",
-          year: "2008",
-          imgurl: "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ1NjExODcyNl5BMl5BanBnXkFtZTcwMTk0MDc4MQ@@._V1_SX300.jpg",
-        },
-        {
-          title: "Batman: Gotham Knight",
-          year: "2008",
-          imgurl: "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ1NjExODcyNl5BMl5BanBnXkFtZTcwMTk0MDc4MQ@@._V1_SX300.jpg",
-        },
-      ]
+      currentMovies: []
     }
     this._newSearch = this._newSearch.bind(this);
+    this._getRandomMovies = this._getRandomMovies.bind(this);
   }
   _newSearch(newQuery){
     this.setState({
       query: newQuery
     })
+    let searchString = 'http://www.omdbapi.com/?s=' + newQuery;
+    axios.get(searchString).then((data) => {
+      let newMovies = data.data.Search;
+      this.setState({currentMovies: newMovies})
+    })
+  }
+  _getRandomMovies(){
+    axios.get('http://www.omdbapi.com/?s=Batman').then((data) => {
+      let newMovies = data.data.Search;
+      this.setState({currentMovies: newMovies})
+    })
+  }
+  componentDidMount(){
+    this._getRandomMovies();
   }
   render() {
     return (

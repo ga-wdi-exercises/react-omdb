@@ -22,3 +22,12 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+.movielistcontainer{
+  display: flex;
+}
+.moviecontainer{
+  display: inline-block;
+  margin: 10px;
+  box-sizing: border-box;
+  width: 300px;
+}
