@@ -23,11 +23,26 @@
   to { transform: rotate(360deg); }
 }
 .movielistcontainer{
+  margin: 0 auto;
+  width: 80%;
   display: flex;
+  flex-flow: row wrap;
+
 }
 .moviecontainer{
   display: inline-block;
   margin: 10px;
   box-sizing: border-box;
   width: 300px;
+}
+.hiddenmovie{
+  display: none;
+}
+.title{
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 4em;
+}
+.movietitle{
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 2em;
 }

@@ -8,7 +8,7 @@ class Home extends Component {
   constructor(){
     super();
     this.state = {
-      query: "",
+      query: "Batman",
       currentMovies: []
     }
     this._newSearch = this._newSearch.bind(this);
@@ -36,6 +36,7 @@ class Home extends Component {
   render() {
     return (
       <div className="App">
+        <h1 className="title">Zaney Movie Search</h1>
         <Search newSearch={this._newSearch} />
         <h3>Currently searching for: {this.state.query}</h3>
         <Movielist movies={this.state.currentMovies} />

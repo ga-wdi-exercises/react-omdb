@@ -12,6 +12,7 @@ class Search extends Component {
   render() {
     return (
         <div>
+          <p>Search for movies here!</p>
           <form onSubmit={this._submitSearch.bind(this)}>
             <input type="text" placeholder="Movie title" ref="searchForm" />
             <input type="submit" value="Search" />
