@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SearchContainer from "./SearchContainer"
-import styles from './styles/index'
+// import styles from './styles/index'
 
 class Home extends Component {
   render() {
