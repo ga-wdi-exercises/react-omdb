@@ -1,1 +1,12 @@
-// Developer TODO: Define App component defintion here
+import React, { Component } from 'react';
+
+class Hello extends Component {
+  render() {
+    return (
+      <p>Hello World</p>
+    )
+  }
+}
+
+
+export default Hello
