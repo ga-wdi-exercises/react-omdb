@@ -4,8 +4,8 @@ import Search from './Search.js';
 class Home extends Component {
   render() {
     return (
-      <div className="container">
-      <h1></h1>
+      <div>
+      <h1>OMDB React</h1>
       <Search />
       </div>
     )
@@ -13,4 +13,4 @@ class Home extends Component {
 }
 
 
-export default Hello
+export default Home
