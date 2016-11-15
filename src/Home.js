@@ -10,8 +10,9 @@ class Hello extends Component {
     // Make sure to return some UI
     return (
       <div>
+
+      <div id="title" >OMDB Movies</div>
       <Search/>
-      <div>Hello World Step 2</div>
       </div>
     )
   }

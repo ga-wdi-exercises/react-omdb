@@ -22,10 +22,10 @@ class Search extends Component {
   render () {
     return (
       <form onSubmit={(e) => this.handleSubmit(e)}>
-             SEARCH:
-             <input type="text" value={this.state.value} onChange={(e) => this.handleSearchChg(e)} />
+             <input type="text"  placeholder = "Movie Search" value={this.state.value} onChange={(e) => this.handleSearchChg(e)} />
              <input type="submit" value="Search" />
            </form>
+
     )
   }
 }
