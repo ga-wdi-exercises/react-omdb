@@ -1,9 +1,11 @@
 // Developer TODO: Load in App component and render to the DOM
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Hello from './App.js'
+import Hello from './Home.js'
 
 ReactDOM.render(
-  <Hello />,
+<h1>
+<Hello/>
+</h1> ,
   document.getElementById('root')
 )

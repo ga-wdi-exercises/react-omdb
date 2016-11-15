@@ -8,7 +8,7 @@ class Hello extends Component {
   render () {
     // Make sure to return some UI
     return (
-      <h1>Hello World!</h1>
+      <div>Hello World Step 2</div>
     )
   }
 }
