@@ -2,10 +2,10 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import HelloWorld from './App.js'
+import Home from './Home.js'
 
 
 ReactDOM.render(
-  <HelloWorld />,
+  <Home />,
   document.getElementById('root')
 )

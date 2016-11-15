@@ -3,12 +3,14 @@
 import React, {Component} from 'react'
 
 // const HelloWorld = props => <h1> Hello World </h1>
-class HelloWorld extends Component {
+class Home extends Component {
   render() {
     return (
-      <h1> Hello World </h1>
+      <div className="main-container">
+      <h1> React OMDB </h1>
+      </div>
     )
   }
 }
 
-export default HelloWorld
+export default Home
