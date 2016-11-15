@@ -1,35 +1,21 @@
 import React, {Component} from "react"
 
 class Search extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      query: ''
+
+  render() {
+    let {handleSearchInput, handleSubmitQuery, query} = this.props
+
+    return(
+        <form onSubmit={(evt) => handleSubmitQuery(evt)}>
+          <input
+            type="text"
+            value={query}
+            onChange={(evt) => handleSearchInput(evt)}
+            placeholder="Enter a movie Title..."/>
+            <button type="submit">Search</button>
+          </form>
+      )
     }
   }
-  handleSearchInput (e) {
-    this.setState({
-      query: e.target.value
-    })
-  }
-
-  submitQuery(evt){
-    evt.preventDefault();
-    console.log(this.state.query)
-  }
-  render() {
-    return(
-      <div className="searchBox">
-        <form onSubmit={(evt) => this.submitQuery(evt)}>
-          <input onChange={(evt) => this.handleSearchInput(evt)}
-          value={this.state.query}
-          type="text"
-          placeholder="Enter a movie Title..."/>
-          <button type="submit">Search</button>
-        </form>
-      </div>
-    )
-  }
-}
 
  export default Search
