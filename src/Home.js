@@ -1,7 +1,7 @@
 // Developer TODO: Define App component defintion here
 // bring in React and Component instance from react
 import React, {Component} from 'react'
-import Search from './Search'
+import SearchContainer from './SearchContainer'
 
 // define our Hello component
 class Hello extends Component {
@@ -12,7 +12,7 @@ class Hello extends Component {
       <div>
 
       <div id="title" >OMDB Movies</div>
-      <Search/>
+      <SearchContainer/>
       </div>
     )
   }
