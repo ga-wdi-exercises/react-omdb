@@ -1,13 +1,17 @@
 import React, {Component} from 'react'
+import Search from "./Search"
 
-class Hello extends Component {
+class Home extends Component {
 
   render () {
 
-    return (
-      <h1>Hello World!</h1>
-    )
+  return (
+    <div>
+      <h1>OMDB React</h1>
+      <Search />
+    </div>
+    );
   }
 }
 
-export default Hello
+export default Home;

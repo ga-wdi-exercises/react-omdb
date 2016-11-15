@@ -1,8 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import Hello from './Home.js'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Home from './Home';
+import './index.css';
 
 ReactDOM.render(
-  <Hello />,
+  <Home />,
   document.getElementById('root')
-)
+);
