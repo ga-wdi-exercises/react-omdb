@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
+import Search from './Search'
 
-class Search extends Component {
+class SearchContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      searchTerm: ''
+      searchTerm: '',
     }
   }
 
@@ -22,9 +23,9 @@ class Search extends Component {
   render(){
     return (
       <Search
-      searchTerm={this.state.searchTerm}
-      onSearchSubmit=( e => this.handleSearchSubmit(e))
-      onSearchInput=(e => this.handleSearchInput(e))
+        searchTerm={this.state.searchTerm}
+        onSearchSubmit={ e => this.handleSearchSubmit(e) }
+        onSearchInput={e => this.handleSearchInput(e)}
       />
     )
   }
