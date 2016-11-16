@@ -11,6 +11,7 @@ class SearchContainer extends Component {
     }
   }
   handleChange(e){
+    console.log(this.state.query)
     this.setState({
       query: e.target.value
     })
@@ -20,6 +21,11 @@ class SearchContainer extends Component {
       console.log("clicked")
     }
         render() {
+          //if statement for if a user has searched, render the Results Component
+          var hasSearched = this.state.query
+          if (hasSearched === true) {
+            return <Results />
+          }
           return (
               <Search
                 query={this.state.query}
