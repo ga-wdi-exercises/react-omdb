@@ -4,9 +4,14 @@ class Results extends Component {
       render(){
         let {movie} = this.props
         let results = this.movie.results.map((movie, i) =>{
+          // movieTitle
+          // moviePoster
         })
         return(
-          <h1></h1>
+          <div>
+          src={props.moviePoster}
+          alt={props.movieTitle}
+          </div>
         )
       }
     }
