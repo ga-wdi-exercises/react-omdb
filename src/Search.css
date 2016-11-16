@@ -1,0 +1,10 @@
+input {
+  width: 200px;
+  height: 20px;
+}
+
+button {
+  display: inline-block;
+  height: 25px;
+  width: 100px;
+}

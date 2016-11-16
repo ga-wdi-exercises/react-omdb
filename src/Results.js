@@ -1,0 +1,26 @@
+import React, { Component } from 'react'
+import './Results.css'
+
+class Results extends Component {
+  render() {
+    let movies = this.props.movies.map((movie, index) => {
+      return(
+        <div key={index}>
+          <img
+            src={movie.Poster}
+            alt={movie.Title}
+          />
+          <p>{movie.Title}</p>
+        </div>
+      )
+    })
+    return(
+      <div>
+        {movies}
+      </div>
+    )
+  }
+}
+
+
+export default Results
