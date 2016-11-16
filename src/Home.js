@@ -7,7 +7,7 @@ class Home extends Component {
 
   return (
     <div>
-      <h1>OMDB React</h1>
+      <h1><a href="/">OMDB React</a></h1>
       <SearchContainer />
     </div>
     );
