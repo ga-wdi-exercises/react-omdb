@@ -1,6 +1,6 @@
 // Developer TODO: Define App component defintion here
 import React, {Component} from 'react'
-import Search from './Search'
+import Search from './search.js'
 
 class SearchContainer extends Component {
   constructor(props) {
