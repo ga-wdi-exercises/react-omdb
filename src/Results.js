@@ -8,8 +8,8 @@ class Results extends Component{
     let results = movies.map( (movie, index) => {
       return (
         <div key={index}>
-          <img src={movie.poster_url} alt={movie.title} />
-          <p>{movie.title}</p>
+          <img src={movie.Poster} alt={movie.Title} />
+          <p>{movie.Title}</p>
         </div>
       )
     })

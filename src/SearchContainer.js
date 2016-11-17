@@ -1,6 +1,8 @@
 import React, {Component} from "react"
 import Search from "./Search"
 import Results from "./Results"
+import {queryOmdb} from "./Utils"
+
 
 class SearchContainer extends Component {
   constructor(props) {
@@ -8,6 +10,7 @@ class SearchContainer extends Component {
     this.state = {
       query: ' ',
       hasSearched: false,
+      movies: [],
     }
   }
 
