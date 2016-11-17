@@ -1,0 +1,13 @@
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie {
+  width: 150px;
+  margin: 20px;
+}
+
+.movie > img {
+  width: 150px;
+}
