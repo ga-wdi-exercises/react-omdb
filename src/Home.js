@@ -5,7 +5,7 @@ class Home extends Component {
   render() {
     return(
       <div>
-      <h1>MooVee Findr</h1>
+      <h1><a href="/">MooVee Findr</a></h1>
       <SearchContainer />
       </div>
     )
