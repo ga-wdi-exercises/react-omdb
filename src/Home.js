@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
-import Search from './Search'
+import SearchContainer from "./SearchContainer"
 
 class Home extends Component {
   render(){
     return(
       <div>
-        <h1>GA Movie Library</h1>
-        <h3>GA's #1 movie library</h3>
-        <Search />
+        <h1>MooVee Findr</h1>
+        <SearchContainer />
       </div>
     )
   }

@@ -1,22 +1,22 @@
-import React, { Component } from 'react'
-import Search from './Search'
+import React, {Component} from "react"
+import Search from "./Search"
 
 class SearchContainer extends Component {
   constructor(props){
-    super(props){
-      query: '',
-      movies: []
+    super(props)
+    this.state = {
+      query: ''
     }
   }
 
-  onSearchInput(event){
+  onSearchInput (evt) {
     this.setState({
-      query: event.target.value
+      query: evt.target.value
     })
   }
 
-  onSubmitQuery(event){
-    event.preventDefault();
+  onSubmitQuery(evt){
+    evt.preventDefault();
     console.log(this.state.query)
     this.setState({
       query: ''
@@ -24,12 +24,14 @@ class SearchContainer extends Component {
   }
 
   render(){
-    <Search
-      onSearchInput={(event) => this.onSearchInput(event)}
-      onSubmitQuery={(event) => this.onSubmitQuery(event)}
-    />
+    return (
+      <Search
+      handleSearchInput={ (evt) => this.onSearchInput(evt) }
+      handleSubmitQuery={ (evt) => this.onSubmitQuery(evt) }
+      query={this.state.query}
+      />
+    )
   }
 }
 
-
-export default SearchContainer;
+export default SearchContainer
