@@ -1,29 +1,14 @@
 import React, { Component } from 'react';
 
 class Search extends Component {
-    constructor(props) {
-      super(props)
-      this.state = {
-        query: ''
-      }
-      }
-      //Is (e) convention?
-      handleSearchInput (e) {
-        this.setState({
-          query: e.target.value
-        })
-      }
-  submitQuery(evt){
-    evt.preventDefault();
-    console.log(this.state.query)
-  }
   render() {
+    let {handleSearchInput, handleSubmitQuery, query} = this.props
     return (
       <div className="searchBox">
-        <form onSubmit={(evt) => this.submitQuery(evt)}>
+        <form onSubmit={(evt) => handleSubmitQuery(evt)}>
         <input
-        onChange={(evt) => this.handleSearchInput(evt)}
-        value={this.state.query}
+        onChange={(evt) => handleSearchInput(evt)}
+        value={query}
         type="text"
         placeholder="Submit a Movie Title Right about here...."
         />
@@ -33,6 +18,7 @@ class Search extends Component {
     );
   }
 }
+
 
 
 export default Search;
