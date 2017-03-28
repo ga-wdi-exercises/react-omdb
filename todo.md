@@ -1,9 +1,3 @@
-### Step 6: When a User Searches...
-
-- Define a results component that will take in a collection of movie objects and render each individual movie's title and poster
-- Refactor your Search Container component to include state relating to whether or not a user has searched
-- If a user has searched, instead of rendering the Search component, render a Results components with hard coded data
-
 ## Bonus
 
 ### Step 7: Connect to the Omdb Api

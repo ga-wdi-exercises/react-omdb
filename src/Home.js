@@ -5,7 +5,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h1>React OMDB</h1>
+        <h1><a href="/">React OMDB</a></h1>
         <SearchContainer />
       </div>
     )
