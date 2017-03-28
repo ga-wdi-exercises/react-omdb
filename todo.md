@@ -1,12 +1,3 @@
-- In your `/src` directory, configure your `App.js` and `index.js` files to render a `HelloWorld` component
-- Run `npm start` and make sure everything is working
-
-### Step 2: Add UI for Home
-
-- Rename `App.js` to `Home.js` to better indicate the purpose of the file. Make sure to update references to this file elsewhere in your application accordingly.
-- Create a Home component that returns a container `<div>` element, which should in turn contain a `<h1>` element.
-- Renders that component to the DOM in your app's main `index.js` file
-
 ### Step 3: Add UI for Search
 
 - Create a new file for your `Search` component.
