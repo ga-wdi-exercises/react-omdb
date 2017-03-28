@@ -1,10 +1,3 @@
-### Step 5: Move Search logic to a Container component
-
-- Refactor your Search component so that it only renders a UI based on passed in data
-- Define a new container component for Search
-- The container Component should handle the business logic for your app's state
-- The Search Container should render the Search component
-
 ### Step 6: When a User Searches...
 
 - Define a results component that will take in a collection of movie objects and render each individual movie's title and poster
