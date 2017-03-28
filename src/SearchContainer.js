@@ -4,6 +4,7 @@ import React, {
 import Search from "./Search"
 import Results from './Results'
 import {queryOmdb} from './Utils'
+import styles from './index'
 
 class SearchContainer extends Component {
 
