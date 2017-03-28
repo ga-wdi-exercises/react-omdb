@@ -1,6 +1,6 @@
 // Developer TODO: Define App component defintion here
 import React, {Component} from 'react'
-import Search from './Search'
+import SearchContainer from './SearchContainer'
 
 class Home extends Component {
 
@@ -9,7 +9,8 @@ class Home extends Component {
     return(
       <div>
         <h2>Movie App</h2>
-        <Search />
+        <br/>
+        <SearchContainer />
       </div>
     )
   }
