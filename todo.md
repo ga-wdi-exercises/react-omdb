@@ -1,10 +1,3 @@
-### Step 3: Add UI for Search
-
-- Create a new file for your `Search` component.
-- Define a `Search` component that renders a search form. This can be a simple form with a single input and submit button.
-- Import the `Search` file to your `Home` file.
-- Render the `Search` component in the `Home` component.
-
 ### Step 4: Wire up the Search Button
 
 - Define your `Search` component's initial state. It should have a `query` value that corresponds to a search term.
