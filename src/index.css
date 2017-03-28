@@ -3,3 +3,24 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.resultsContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+img {
+  height: 350px;
+  width: 230px;
+}
+
+.searchBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  text-align: center;
+}
