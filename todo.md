@@ -1,11 +1,3 @@
-### Step 4: Wire up the Search Button
-
-- Define your `Search` component's initial state. It should have a `query` value that corresponds to a search term.
-- Define a function that is triggered whenever the user submits the Search form. Start by just logging `"clicked!"` to make sure it works.
-  - Use an event listener to attach this function to your form. Try googling `onSubmit`.
-- Define a function that updates your `query` value in state whenever a change is made to the input field. Try googling `onChange`.
-- Update your submit function so that it now logs the `query` value in state.
-
 ### Step 5: Move Search logic to a Container component
 
 - Refactor your Search component so that it only renders a UI based on passed in data
