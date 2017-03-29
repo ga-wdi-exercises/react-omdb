@@ -1,7 +1,7 @@
-// Developer TODO: Load in Home component and render to the DOM
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Home from './Home'
+import './index.css'
 
 
 ReactDOM.render(
