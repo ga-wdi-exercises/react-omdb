@@ -6,11 +6,14 @@ class Results extends Component{
 
     let movies = this.props.movies.map( (movie, index) => {
       return (
+
         <div key={index}>
+
           <img
             src={movie.Poster}
             alt={movie.Title} />
-          <p>{movie.Title}</p>
+           <p>{movie.Title}</p>
+
         </div>
       )
     })

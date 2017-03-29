@@ -4,7 +4,7 @@ import Results from "./Results"
 import {queryOmdb} from "./Apidata"
 
 
-console.log(queryOmdb)
+
 class SearchContainer extends Component {
   constructor(props){
     super(props)
