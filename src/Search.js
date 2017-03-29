@@ -3,12 +3,33 @@ import React, { Component } from 'react'
 
 
 class Search extends Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      query: ''
+    }
+  }
+
+  handleSearchInput(evt){
+        this.setState({
+          query: evt.target.value,
+        })
+      }
+
+  handleSubmitQuery(evt){
+    evt.preventDefault()
+    console.log("I am working!")
+      }
+
   render(){
+
     return(
       <div className="col-sm-12">
-      <form>
+      <form onSubmit={(evt) => this.handleSubmitQuery(evt)}>
             <div className="form-group">
               <input
+              onChange={(evt) => this.handleSearchInput(evt)}
+                value={this.state.query}
                 className="form-control"
                 type="text"
                 placeholder="Enter a Movie Title..." />
