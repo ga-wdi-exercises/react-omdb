@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Search from './Search'
 import Results from './Results'
+import $ from 'jquery'
 
 class SearchContainer extends Component {
   constructor(props) {
@@ -13,9 +14,19 @@ class SearchContainer extends Component {
 
   onSearchMovie(e) {
     e.preventDefault()
+    console.log(this.state.searchVal);
     this.setState({
       searchVal: '',
       hasSearched: true
+    }, () => {
+      console.log(this.state.searchVal);
+      $.ajax({
+        url: `http://www.omdbapi.com/?t=${this.state.searchVal}`,
+        type: "get",
+        dataType: "json"
+      }).done((response) => {
+        console.log(response);
+      })
     })
   }
 
