@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HelloWorld from './App';
+import App from './Home';
 import './index.css';
 
 
 ReactDOM.render(
-  <HelloWorld />,
+  <App />,
   document.getElementById('root')
 )
