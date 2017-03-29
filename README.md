@@ -21,7 +21,7 @@ npm start
 Before we start building our React app, let's create a `HelloWorld` component just to make sure that we've tied everything together properly.
 
 - `npm install` the dependencies you'll need
-- In your `/src` directory, configure your `App.js` and `index.js` files to render a `HelloWorld` component
+- In your `/src` directory, configure your `Home.js` and `index.js` files to render a `HelloWorld` component
 - Run `npm start` and make sure everything is working
 
 ### Step 2: Add UI for Home
