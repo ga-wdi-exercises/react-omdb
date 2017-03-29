@@ -8,7 +8,7 @@ class SearchContainer extends Component {
       query: ''
     }
   }
-  onSearchInput (input) {
+  onSearchInput (evt) {
     this.setState({
       query: evt.target.value
     })
