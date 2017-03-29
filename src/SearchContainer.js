@@ -1,22 +1,17 @@
 import React, {Component} from "react"
 import Search from "./Search"
 import Results from "./Results"
+import {queryOmdb} from "./Apidata"
 
-let seedData = [{Title: "The GodFather",
-Poster: "https://images-na.ssl-images-amazon.com/images/G/01/DVD/Paramount/detailpages/TheGodfather/GdfthrColl_Still_H5_L.jpg"
-},
-{
-  Title: "The GodFather 2",
-  Poster: "http://ourgoldenage.com.au/wp-content/uploads/2014/04/GAC_GodfatherII.png"
-}]
-console.log(seedData)
+
+console.log(queryOmdb)
 class SearchContainer extends Component {
   constructor(props){
     super(props)
     this.state = {
       query: '',
       hasSearched: false,
-      movies: seedData,
+      movies: [],
 
     }
   }
@@ -34,11 +29,14 @@ class SearchContainer extends Component {
 
   onSubmitQuery(evt){
     evt.preventDefault()
-    this.setState({
-      query: evt.target.value,
-      hasSearched: true
+    let component = this
+    queryOmdb(this.state.query).then( data => {
+      component.setState({
+        query: '',
+        hasSearched: !component.state.hasSearched,
+        movies: data,
+      })
     })
-
   }
 
   render(){
