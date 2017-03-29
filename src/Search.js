@@ -18,7 +18,7 @@ class Search extends Component{
 
   handleSubmitQuery(evt){
     evt.preventDefault()
-    console.log("I am working!")
+    console.log(this.state.query)
       }
 
   render(){
