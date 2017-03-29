@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 
 class Search extends Component {
-  
   render(){
     return(
-      <div>
-        <form onSubmit={(e) => this.submitQuery(e)}>
-          <input onChange={(e) => this.handleSearchInput(e)} value={this.state.query} type="text" placeholder="Enter a movie title . .  ."/>
+      <div className="searchBox">
+        <form onSubmit={(e) => this.props.handleSubmitQuery(e)}>
+          <input onChange={(e) => this.props.handleSearchInput(e)} value={this.state.query} type="text" placeholder="Enter a movie title . .  ."/>
           <button type="submit">Search</button>
         </form>
       </div>
