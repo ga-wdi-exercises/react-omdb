@@ -16,8 +16,8 @@ class Search extends Component {
   render(){
     return(
       <div>
-        <form onSubmit={(evt) => this.submitQuery(evt)}>
-        <input type='text' placeholder='Enter Movie Here'></input>
+        <form onSubmit={(evt) => this.props.submitQuery(evt)}>
+        <input type='text' placeholder='Enter Movie Here' value={this.props.query} onChange={(evt) => this.props.handleSearch(evt)}></input>
         <button type='submit'>Search</button>
         </form>
       </div>
