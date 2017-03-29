@@ -2,8 +2,7 @@ import React, {Component} from 'react'
 
 class Results extends Component{
   render(){
-    let {movies} = this.props
-    let results = movies.map( (movie, index) => {
+    let movies= this.props.movies.map( (movie, index) => {
       return (
         <div key={index}>
           <img
@@ -14,13 +13,15 @@ class Results extends Component{
       )
     })
 
+
     return (
       <div>
-        {results}
+        {movies}
       </div>
     )
   }
 }
+
 
 
 
