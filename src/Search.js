@@ -1,35 +1,17 @@
-import React, { Component } from 'react'
+import React, {Component} from "react"
 
 
-
-class Search extends Component{
-  constructor(props){
-    super(props)
-    this.state = {
-      query: ''
-    }
-  }
-
-  handleSearchInput(evt){
-        this.setState({
-          query: evt.target.value,
-        })
-      }
-
-  handleSubmitQuery(evt){
-    evt.preventDefault()
-    console.log(this.state.query)
-      }
-
+class Search extends Component {
   render(){
-
-    return(
-      <div className="col-sm-12">
-      <form onSubmit={(evt) => this.handleSubmitQuery(evt)}>
+    let {handleSearchInput, handleSubmitQuery, query} = this.props
+    return (
+      <div className="jumbotron col-sm-6 col-sm-offset-3 text-center">
+        <div className="col-sm-12">
+          <form onSubmit={(evt) => handleSubmitQuery(evt)}>
             <div className="form-group">
               <input
-              onChange={(evt) => this.handleSearchInput(evt)}
-                value={this.state.query}
+                onChange={(evt) => handleSearchInput(evt)}
+                value={query}
                 className="form-control"
                 type="text"
                 placeholder="Enter a Movie Title..." />
@@ -40,11 +22,10 @@ class Search extends Component{
                 type="submit">Search</button>
             </div>
           </form>
+        </div>
       </div>
     )
   }
 }
 
-
-
-export default Search;
+export default Search
