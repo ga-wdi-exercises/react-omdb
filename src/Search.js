@@ -6,11 +6,10 @@ class Search extends Component {
     return(
       <div className="searchBox">
         <form onSubmit={(e) => this.props.handleSubmitQuery(e)}>
-          <input onChange={(e) => this.props.handleSearchInput(e)} value={this.state.query} type="text" placeholder="Enter a movie title . .  ."/>
+          <input onChange={(e) => this.props.handleSearchInput(e)} value={this.props.query} type="text" placeholder="Enter a movie title . .  ."/>
           <button type="submit">Search</button>
         </form>
       </div>
-
     )
   }
 
