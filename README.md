@@ -20,6 +20,7 @@ npm start
 
 Before we start building our React app, let's create a `HelloWorld` component just to make sure that we've tied everything together properly.
 
+- Fork this repository then clone your fork
 - `npm install` the dependencies you'll need
 - In your `/src` directory, configure your `App.js` and `index.js` files to render a `HelloWorld` component
 - Run `npm start` and make sure everything is working
