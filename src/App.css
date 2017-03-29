@@ -1,3 +1,11 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 16pt;
+  width: 100vw;
+  height: 100vh;
+  color: blue;
+}
 .App {
   text-align: center;
 }
