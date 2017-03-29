@@ -2,22 +2,7 @@ import React, { Component } from 'react';
 
 
 class Search extends Component {
-  constructor(props){
-    super()
-    this.state ={
-      query: ''
-    }
-  }
-
-  handleSearchInput(e){
-    this.setState({
-      query: e.target.value
-    })
-  }
-
-  submitQuery(e){
-    e.preventDefault()
-  }
+  
   render(){
     return(
       <div>
